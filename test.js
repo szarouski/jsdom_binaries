@@ -10,7 +10,7 @@ var doc   = jsdom.jsdom(fs.readFileSync("test.html"), null, {
         }
     });
 
-var window = doc.createWindow();
+var window = doc.parentWindow;
 jsdom.jQueryify(window, "http://code.jquery.com/jquery-1.5.min.js", function() {
     console.log(window.a);
     console.log(window.$().jquery); //jquery version
